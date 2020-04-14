@@ -1,1 +1,1 @@
-# ZSGD STUDIO
+# [ZSGD STUDIO](./index.md)

@@ -211,6 +211,7 @@ public class BodyParser {
      * */
 
     private String relateLink(String link) {
+        if (link.contains("http")) return link;
         Path relSrcPath = Path.of(link);
         Path absSrcPath = PathHelper.resolveSiblingAbsNorm(res.getPath(), relSrcPath);
         Path relTrgPath = PathHelper.reRelate(scope, absSrcPath);

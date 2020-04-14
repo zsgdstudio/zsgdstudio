@@ -1,1 +1,1 @@
-[(c) 2020](https://github.com/zsgdstudio/zsgdstudio/blob/master/LICENSE.md)
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
