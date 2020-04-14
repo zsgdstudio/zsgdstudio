@@ -1,0 +1,1 @@
+[(c) 2020](https://github.com/zsgdstudio/zsgdstudio/blob/master/LICENSE.md)
