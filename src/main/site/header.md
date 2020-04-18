@@ -1,1 +1,4 @@
-# [ZSGD STUDIO](./index.md)
+- [Главная](./index.md)
+- [Fairydust RPG](./fairydust-rpg/corebook/index.md)
+- [Bloodpunk RPG](./bloodpunk-rpg/corebook/index.md)
+- [Контакты](./contacts.md)
