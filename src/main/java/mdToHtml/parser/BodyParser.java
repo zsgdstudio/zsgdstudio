@@ -105,7 +105,7 @@ public class BodyParser {
     }
 
     private void table(Lines blockLines) {
-        textLn("<table class=\"block\">");
+        textLn("<table>");
         tableRow(blockLines.remove());
         blockLines.remove();
         while (!blockLines.isEmpty()) {

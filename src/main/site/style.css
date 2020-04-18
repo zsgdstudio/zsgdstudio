@@ -1,17 +1,65 @@
-body{
+/*style clearing*/
+
+body {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+
     background-color: #f0f0f0;
+
     font-family: sans-serif;
     line-height: 125%;
 }
 
-.header, .footer{
-    width: 100%;
+ul {
     margin: 0px;
-    padding: 5px;
-    clear: both;
-    text-align: center;
-    background-color: #e0e0e0;
+    border: 0px;
 }
+
+
+
+/*header*/
+
+.header {
+    width: 100%;
+    clear: both;
+    padding: 5px;
+
+    background-color: #e0e0e0;
+
+    text-align: center;
+}
+.header li {
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline;
+
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+.header a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/*footer*/
+
+.footer {
+    width: 100%;
+    clear: both;
+    padding: 1px;
+
+    background-color: #e0e0e0;
+
+    text-align: center;
+}
+
+
+
+/*content*/
 
 .content{
     display: flex;
@@ -22,35 +70,45 @@ body{
     }
 }
 
-.sider{
+.sider {
+    flex: 1;
     max-width: 320px;
 }
 @media (max-width: 960px) {
-    .sider{
-        float: none;
+    .sider {
         max-width: none;
-        height: 60px;
+        max-height: 75px;
         overflow: hidden;
-        transition: height
+        transition: height;
     }
-    .sider:hover{
-        height: auto
+    .sider:hover {
+        height: auto;
+        max-height: none;
     }
 }
 
 .center{
+    flex: 3;
+    max-width: 50%;
+    padding: 15px;
+
     background-color: #f7f7f7;
-    max-width: 640px;
-    flex: 10;
 }
 @media (max-width: 960px) {
     .center{
-        margin: auto;
+        max-width: 100%;
     }
 }
 
+
+
+/*elements*/
+
 .horizontal_nav {
-    margin: 15px;
+}
+.horizontal_nav a {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .horizontal_nav .prev {
 }
@@ -58,44 +116,51 @@ body{
     float: right;
 }
 
-.block{
-    margin: 15px;
-    width: 95%
+.block {
+    max-width: 100%;
+    margin: 10px;
 }
 
-.example{
-    margin: 15px;
-    width: 95%;
+.example {
+    max-width: 100%;
+    margin: 10px;
+    padding: 10px;
+
     color: grey;
     border: 1px solid gray;
     border-radius: 15px;
 }
 
-.code{
+.code {
     text-decoration: underline;
 }
 
-.image{
+.image {
     text-align: center;
 }
-.image img{
+.image img {
     width: auto;
     max-width: 100%
 }
 
-ul{
+
+
+
+
+ul {
     list-style-type: circle;
     list-style-position: outside;
-    padding-left: 30px;
 }
 
-table{
+table {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     empty-cells: show;
     border-collapse: collapse;
 }
 
-td{
-    padding: 5px;
+td {
     border: 1px solid black;
     text-align: center;
 }
