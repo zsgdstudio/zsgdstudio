@@ -140,6 +140,8 @@ public class BodyParser {
                 link(line);
             } else if (line.contains("__")) {
                 bold(line);
+            } else if (line.contains("~~")) {
+                strike(line);
             } else if (line.contains("_")) {
                 italic(line);
             } else if (line.contains("`")) {
@@ -184,6 +186,10 @@ public class BodyParser {
 
     private void bold(String line) {
         splitAndSurround(line, "__", "<b>", "</b>");
+    }
+
+    private void strike(String line) {
+        splitAndSurround(line, "~~", "<s>", "</s>");
     }
 
     private void italic(String line) {

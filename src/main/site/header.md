@@ -1,4 +1,4 @@
 - [Главная](./index.md)
-- [Fairydust RPG](./fairydust-rpg/corebook/index.md)
+- [Fairydust RPG](./fairydust-rpg/index.md)
 - [Bloodpunk RPG](./bloodpunk-rpg/corebook/index.md)
 - [Контакты](./contacts.md)

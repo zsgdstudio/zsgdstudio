@@ -29,6 +29,9 @@ ul {
 
     text-align: center;
 }
+.header ul {
+    padding: 0px;
+}
 .header li {
     padding: 10px;
     margin-left: 5px;
