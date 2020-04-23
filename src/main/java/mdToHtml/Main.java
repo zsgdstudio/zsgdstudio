@@ -13,7 +13,11 @@ public class Main {
         Scope scope = new Scope();
         scope.setSrc(new File(SRC));
         scope.setTrg(new File(TRG));
-        DirParser.parse(scope, new File(SRC));
+        File dir = new File(SRC);
+        if (dir.exists()) {
+            dir.delete();
+        }
+        DirParser.parse(scope, dir);
     }
 
 }
