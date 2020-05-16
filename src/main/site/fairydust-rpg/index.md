@@ -1,8 +1,10 @@
-![FAIRIDUST](corebook/x_img/logo.png)
+![FAIRIDUST](a_corebook/x_img/logo.png)
 
 Настольная ролевая игра про приключения и магию, где все заклинания создаются игроками.
 
-[Основная книга правил](corebook/index.md)
+[Основная книга правил](a_corebook/index.md)
+
+[Дополнительная книга правил](b_advancedbook/index.md)
 
 Сценарии (в разработке)
 
