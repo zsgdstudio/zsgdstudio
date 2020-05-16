@@ -21,9 +21,13 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>1.6.0</version>
                 <configuration>
-                    <mainClass>mdToHtml.Main</mainClass>
+                    <mainClass>builder.Main</mainClass>
+                    <arguments>
+                        <argument>src/main/site/</argument>
+                        <argument>out/</argument>
+                    </arguments>
                 </configuration>
             </plugin>
         </plugins>

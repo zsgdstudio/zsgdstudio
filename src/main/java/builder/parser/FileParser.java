@@ -1,9 +1,8 @@
-package mdToHtml.parser;
+package builder.parser;
 
-import mdToHtml.helper.PathHelper;
-import mdToHtml.model.FileLines;
-import mdToHtml.model.Lines;
-import mdToHtml.model.Scope;
+import builder.helper.PathHelper;
+import builder.model.Context;
+import builder.model.FLines;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,20 +11,20 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
 public class FileParser {
-    private static BodyParser bodyParser = new BodyParser();
+    private BodyParser bodyParser = new BodyParser();
 
-    public static void parse(Scope scope, File file) {
+    public void parse(Context context, File file) {
         String fileName = file.getName();
-        Path trgPath = PathHelper.reRelateAbsNorm(scope, file);
+        Path trgPath = PathHelper.reRelateAbsNorm(context, file.toPath());
 
         if (!fileName.endsWith(".md") && !fileName.endsWith(".html")) {
             copy(file.toPath(), trgPath);
             return;
         }
-        parse0(scope, file, trgPath);
+        parse0(context, file, trgPath.toFile());
     }
 
-    private static void copy(Path from, Path to) {
+    private void copy(Path from, Path to) {
         try {
             Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
@@ -33,56 +32,51 @@ public class FileParser {
         }
     }
 
-    private static void parse0(Scope scope, File file, Path trgPath) {
-        FileLines in = new FileLines(file);
-        FileLines out = new FileLines(trgPath);
+    private void parse0(Context context, File src, File trg) {
+        FLines in = new FLines(context, src);
+        FLines out = new FLines(context, trg);
 
         out.add("<html>");
 
         out.add("<head>");
         out.add("<meta charset=\"utf-8\"/>");
         out.add("<meta name=\"viewport\" content=\"width=device-width\">");
-
-        if (scope.getCss() != null) {
+        if (context.getCss() != null) {
             out.add("<link rel=\"stylesheet\" href=\"" +
-                    PathHelper.reRelate(scope, scope.getCss()) +
+                    PathHelper.reRelate(context, context.getCss().toPath()) +
                     "\"/>");
         }
         out.add("</head>");
 
         out.add("<body>");
 
-        if (scope.getHeaderFl() != null) {
+        if (context.getHeaderFl() != null) {
             out.add("<div class=\"header\">");
-            out.addAll(bodyParser.parse(scope, scope.getHeaderFl()));
+            out.addAll(bodyParser.parse(context, context.getHeaderFl()));
             out.add("</div>");
         }
 
         out.add("<div class=\"content\">");
-        if (scope.getNavigationFl() != null) {
+
+        if (context.getNavigationFl() != null) {
             out.add("<div class=\"sider\">");
-            out.addAll(bodyParser.parse(scope, scope.getNavigationFl()));
+            out.addAll(bodyParser.parse(context, context.getNavigationFl()));
             out.add("</div>");
         }
 
-        Lines horNav;
-        if (scope.getNavigation() != null) {
-            horNav = scope.getNavigation().getHorizontalNav(scope, file);
-        } else {
-            horNav = new Lines();
-        }
-
         out.add("<div class=\"center\">");
+        FLines horNav = NavigationParser.getHorizontalNavFl(context, in);
         out.addAll(horNav);
-        out.addAll(bodyParser.parse(scope, in));
+        out.addAll(NavigationParser.getDirNavFl(context, in));
+        out.addAll(bodyParser.parse(context, in));
         out.addAll(horNav);
         out.add("</div>");
 
         out.add("</div>");
 
-        if (scope.getFooterFl() != null) {
+        if (context.getFooterFl() != null) {
             out.add("<div class=\"footer\">");
-            out.addAll(bodyParser.parse(scope, scope.getFooterFl()));
+            out.addAll(bodyParser.parse(context, context.getFooterFl()));
             out.add("</div>");
         }
 
@@ -90,6 +84,5 @@ public class FileParser {
 
         out.write();
     }
-
 
 }

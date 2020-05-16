@@ -1,37 +1,25 @@
-package mdToHtml.parser;
+package builder.parser;
 
-import mdToHtml.helper.PathHelper;
-import mdToHtml.model.*;
+import builder.helper.PathHelper;
+import builder.model.Context;
+import builder.model.FLines;
+import builder.model.TString;
 
 import java.nio.file.Path;
 
 public class BodyParser {
-    private Scope scope;
+    private Context context;
+    private FLines src;
     private StringBuilder curStr = new StringBuilder();
-    private FileLines res;
+    private FLines res;
 
-
-    public FileLines parse(Scope scope, FileLines fl) {
-        this.scope = scope;
-        res = new FileLines(fl.getPath());
+    public FLines parse(Context context, FLines fl) {
+        this.context = context;
+        this.src = fl;
+        res = new FLines();
         curStr = new StringBuilder();
-
-        for (Lines lines : fl.split("")) {
+        for (FLines lines : fl.split("")) {
             block(lines);
-        }
-
-        return res;
-    }
-
-    public Navigation parseNavigation(Scope scope) {
-        Navigation res = new Navigation();
-        for (String line : scope.getNavigationFl()) {
-            if (!line.contains("![") && line.contains("[")) {
-                String mdLink = TriString.fromToInclusive(line, "[", ")").getContent();
-                String link = TriString.fromToExclusive(mdLink, "(", ")").getContent();
-                Path absLinkPath = PathHelper.resolveSiblingAbsNorm(scope.getNavigationFl().getPath(), Path.of(link));
-                res.add(absLinkPath);
-            }
         }
         return res;
     }
@@ -40,7 +28,8 @@ public class BodyParser {
      * blocks
      * */
 
-    private void block(Lines blockLines) {
+    private void block(FLines blockLines) {
+        if (blockLines.isEmpty()) return;
         String line = blockLines.peek();
         if (line.startsWith(">")) {
             example(blockLines);
@@ -51,9 +40,9 @@ public class BodyParser {
         }
     }
 
-    private void justBlock(Lines blockLines) {
+    private void justBlock(FLines blockLines) {
         textLn("<div class=\"block\">");
-        String line = "";
+        String line;
         while (!blockLines.isEmpty()) {
             line = blockLines.remove();
             if (line.startsWith("-")) {
@@ -68,9 +57,9 @@ public class BodyParser {
         textLn("</div>");
     }
 
-    private void example(Lines blockLines) {
-        Lines newBlockLines = new Lines();
-        String line = "";
+    private void example(FLines blockLines) {
+        FLines newBlockLines = new FLines();
+        String line;
         while (!blockLines.isEmpty()) {
             line = blockLines.remove();
             if (line.startsWith(">")) newBlockLines.add(line.substring(1));
@@ -78,15 +67,15 @@ public class BodyParser {
         }
 
         textLn("<div class=\"example\">");
-        for (Lines lines : newBlockLines.split("")) {
+        for (FLines lines : newBlockLines.split("")) {
             block(lines);
         }
         textLn("</div>");
     }
 
-    private void list(Lines blockLines) {
+    private void list(FLines blockLines) {
         boolean inItem = false;
-        String line = "";
+        String line;
         textLn("<ul>");
         while (!blockLines.isEmpty()) {
             line = blockLines.remove();
@@ -104,7 +93,7 @@ public class BodyParser {
         textLn("</ul>");
     }
 
-    private void table(Lines blockLines) {
+    private void table(FLines blockLines) {
         textLn("<table>");
         tableRow(blockLines.remove());
         blockLines.remove();
@@ -154,34 +143,38 @@ public class BodyParser {
 
     private void header(String line) {
         int headerInt = 0;
-        for (; line.charAt(headerInt) == '#'; headerInt++) {}
+        while (line.charAt(headerInt) == '#') {
+            headerInt++;
+        }
         text("<h" + headerInt + ">");
         line(line.substring(headerInt).trim());
         text("</h" + headerInt + ">");
     }
 
     private void img(String line) {
-        TriString ts = TriString.fromToInclusive(line, "![", ")");
-        line(ts.getPre());
+        TString.splitInc(line, "![", ")").then((pre, content, post) -> {
+            line(pre);
 
-        String aText = TriString.fromToExclusive(ts.getContent(), "![", "]").getContent();
-        String src = TriString.fromToExclusive(ts.getContent(), "(", ")").getContent();
-        src = relateLink(src);
-        text( "<div class=\"image\"><a href=\"" + src + "\" target=_blank> <img src=\"" + src + "\" alt=\"" + aText + "\"/></a></div>");
+            String aText = TString.splitExc(content, "![", "]").getContent();
+            String src = TString.splitExc(content, "(", ")").getContent();
+            src = relateLink(src);
+            text( "<div class=\"image\"><a href=\"" + src + "\" target=_blank> <img src=\"" + src + "\" alt=\"" + aText + "\"/></a></div>");
 
-        line(ts.getPost());
+            line(post);
+        });
     }
 
     private void link(String line) {
-        TriString ts = TriString.fromToInclusive(line, "[", ")");
-        line(ts.getPre());
+        TString.splitInc(line, "[", ")").then((pre, content, post) -> {
+            line(pre);
 
-        String aText = TriString.fromToExclusive(ts.getContent(), "[", "]").getContent();
-        String href = TriString.fromToExclusive(ts.getContent(), "(", ")").getContent();
-        href = relateLink(href);
-        text("<a href=\"" + href + "\">" + aText + "</a>");
+            String aText = TString.splitExc(content, "[", "]").getContent();
+            String href = TString.splitExc(content, "(", ")").getContent();
+            href = relateLink(href);
+            text("<a href=\"" + href + "\">" + aText + "</a>");
 
-        line(ts.getPost());
+            line(post);
+        });
     }
 
     private void bold(String line) {
@@ -201,15 +194,13 @@ public class BodyParser {
     }
 
     private void splitAndSurround(String line, String splitBy, String surroundLeft, String surroundRight) {
-        TriString ts = TriString.splitExclusive(line, splitBy);
-        if (!ts.isOk()) text(line);
-        else {
-            line(ts.getPre());
+        TString.splitExc(line, splitBy).ifOk((pre, content, post) -> {
+            line(pre);
             text(surroundLeft);
-            line(ts.getContent());
+            line(content);
             text(surroundRight);
-            line(ts.getPost());
-        }
+            line(post);
+        }).ifNotOk(() -> text(line));
     }
 
     /**
@@ -218,11 +209,13 @@ public class BodyParser {
 
     private String relateLink(String link) {
         if (link.contains("http")) return link;
-        Path relSrcPath = Path.of(link);
-        Path absSrcPath = PathHelper.resolveSiblingAbsNorm(res.getPath(), relSrcPath);
-        Path relTrgPath = PathHelper.reRelate(scope, absSrcPath);
-
-        return relTrgPath.toString();
+        Path relSrcPath;
+        try {
+            relSrcPath = Path.of(link);
+        } catch (Exception e) {
+            return link;
+        }
+        return PathHelper.reRelate(context, PathHelper.resolve(src.getContext(), relSrcPath)).toString();
     }
 
     private void text(String line) {
