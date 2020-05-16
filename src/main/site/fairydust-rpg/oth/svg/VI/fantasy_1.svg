@@ -15,8 +15,8 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="3_settings_fantasy_1.svg"
-   inkscape:export-filename="C:\Users\MotLA\Desktop\Table Top\Fairydust-RPG\ru\corebook\x_img\setting_sheet_page_1.png"
+   sodipodi:docname="fantasy_1.svg"
+   inkscape:export-filename="C:\Users\MotLA\Desktop\Creat\ijIdea\zsgdstudio\src\main\site\fairydust-rpg\corebook\x_img\VI\fantasy_1.png"
    inkscape:export-xdpi="350"
    inkscape:export-ydpi="350">
   <defs
@@ -36,9 +36,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.75772403"
-     inkscape:cx="329.6611"
-     inkscape:cy="318.40021"
+     inkscape:zoom="1.0405756"
+     inkscape:cx="286.51664"
+     inkscape:cy="110.73761"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="true"
@@ -1270,19 +1270,6 @@
      id="layer3"
      inkscape:label="content">
     <flowRoot
-       xml:space="preserve"
-       id="flowRoot255"
-       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       transform="scale(0.9375)"><flowRegion
-         id="flowRegion257"
-         style="text-anchor:start;text-align:start;fill:#4d4d4d;"><rect
-           id="rect259"
-           width="302.36221"
-           height="18.897638"
-           x="37.795277"
-           y="45.354301"
-           style="text-anchor:start;text-align:start;fill:#4d4d4d;" /></flowRegion><flowPara
-         id="flowPara261">фентези</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.9375,0,0,0.9375,-3e-7,35.433081)"
        xml:space="preserve"
        id="flowRoot255-2"
