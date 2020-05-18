@@ -1,3 +1,4 @@
+/*https://www.colorcombos.com/color-schemes/14/ColorCombo14.html*/
 /*style clearing*/
 
 body {
@@ -5,7 +6,8 @@ body {
     border: 0px;
     padding: 0px;
 
-    background-color: #f0f0f0;
+    background-color: #C3C3E5;
+    color: #443266;
 
     font-family: sans-serif;
     line-height: 125%;
@@ -25,7 +27,7 @@ ul {
     clear: both;
     padding: 5px;
 
-    background-color: #e0e0e0;
+    background-color: #443266;
 
     text-align: center;
 }
@@ -38,11 +40,12 @@ ul {
     margin-right: 5px;
     display: inline;
 
-    border: 1px solid gray;
+    border: 2px solid #C3C3E5;
     border-radius: 15px;
 }
 .header a {
-    color: black;
+    color: #C3C3E5;
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -55,9 +58,13 @@ ul {
     clear: both;
     padding: 1px;
 
-    background-color: #e0e0e0;
+    background-color: #443266;
 
     text-align: center;
+}
+.footer a {
+    color: #C3C3E5;
+    text-decoration: none;
 }
 
 
@@ -95,7 +102,7 @@ ul {
     max-width: 50%;
     padding: 15px;
 
-    background-color: #f7f7f7;
+    background-color: #F1F0FF;
 }
 @media (max-width: 960px) {
     .center{
@@ -129,7 +136,7 @@ ul {
     margin: 10px;
     padding: 10px;
 
-    color: grey;
+    color: #8C489F;
     border: 1px solid gray;
     border-radius: 15px;
 }
