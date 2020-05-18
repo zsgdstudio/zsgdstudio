@@ -26,6 +26,9 @@ ul {
     width: 100%;
     clear: both;
     padding: 5px;
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: nowrap;
 
     background-color: #443266;
 
@@ -73,6 +76,7 @@ ul {
 
 .content{
     display: flex;
+    min-height: 75%;
 }
 @media (max-width: 960px) {
     .content {
@@ -87,7 +91,7 @@ ul {
 @media (max-width: 960px) {
     .sider {
         max-width: none;
-        max-height: 75px;
+        max-height: 4em;
         overflow: hidden;
         transition: height;
     }
