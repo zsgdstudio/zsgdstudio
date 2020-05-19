@@ -25,7 +25,8 @@ ul {
 .header {
     width: 100%;
     clear: both;
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     overflow-x: auto;
     overflow-y: visible;
     white-space: nowrap;
@@ -33,6 +34,7 @@ ul {
     background-color: #443266;
 
     text-align: center;
+    color: #C3C3E5;
 }
 .header ul {
     padding: 0px;
@@ -59,11 +61,13 @@ ul {
 .footer {
     width: 100%;
     clear: both;
-    padding: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 
     background-color: #443266;
 
     text-align: center;
+    color: #C3C3E5;
 }
 .footer a {
     color: #C3C3E5;
@@ -74,7 +78,7 @@ ul {
 
 /*content*/
 
-.content{
+.content {
     display: flex;
     min-height: 75%;
 }
@@ -101,7 +105,7 @@ ul {
     }
 }
 
-.center{
+.center {
     flex: 3;
     max-width: 50%;
     padding: 15px;
@@ -119,15 +123,21 @@ ul {
 /*elements*/
 
 .horizontal_nav {
+    display: inline-block;
+    width: 99%;
 }
 .horizontal_nav a {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 .horizontal_nav .prev {
+    float: left;
+    width: 49%;
 }
 .horizontal_nav .next {
     float: right;
+    width: 49%;
+    text-align: right;
 }
 
 .block {
