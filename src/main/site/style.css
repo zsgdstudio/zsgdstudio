@@ -123,6 +123,8 @@ ul {
 /*elements*/
 
 .horizontal_nav {
+    display: inline-block;
+    width: 99%;
 }
 .horizontal_nav a {
     padding-top: 10px;
