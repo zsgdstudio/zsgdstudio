@@ -1,5 +1,6 @@
 # Контакты
 
-e-mail: zsgdstudio@gmail.com
+[e-mail](mailto:zsgdstudio@gmail.com) zsgdstudio@gmail.com
 
-github: https://github.com/zsgdstudio/zsgdstudio
+[github](https://github.com/zsgdstudio/zsgdstudio)
+
