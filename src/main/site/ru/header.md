@@ -1,0 +1,4 @@
+- [Главная](./index.md)
+- [Fairydust RPG](./fairydust-rpg/index.md)
+- [Контакты](./contacts.md)
+- [A / あ](lang.md)
