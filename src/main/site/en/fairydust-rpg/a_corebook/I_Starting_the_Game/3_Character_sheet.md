@@ -1,4 +1,4 @@
-# 3 Лист персонажа
+# 3 Character sheet
 
 ![Лист персонажа страница 1](img/character_sheet_page_1.png)
 

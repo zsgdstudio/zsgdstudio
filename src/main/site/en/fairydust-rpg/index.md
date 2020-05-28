@@ -1,18 +1,18 @@
 ![FAIRIDUST](img/logo.png)
 
-_Настольная ролевая игра про приключения, интриги, экшен и магию,_
-_где правила позволяют игрокам придумывать заклинания на лету._
+_Tabletop RPG about adventure, mystery, action and magic,_
+_where rules allow players to come up with spell on the fly._
 
-[Основная книга правил](a_corebook/index.md)
+[Core rule book](a_corebook/index.md)
 
-Сценарии (в разработке)
+Scenarios (in dev)
 
-## Поддержать проект
+## Support project
 
-[Поучаствовать в бета-тестировании](support/beta.md)
+[Join beta test](support/beta.md)
 
-Предложить сценарий (в разработке)
+Offer scenario (in dev)
 
-[Поддержать информационно](support/info.md)
+[Info support](support/info.md)
 
-[Сообщить об ошибке](support/report.md)
+[Report site error](support/report.md)

@@ -1,12 +1,12 @@
-# Основная книга правил
+# Core rule book
 
 `ver. OpenBeta.indev`
 
-_Разработка_
-- __Мотыченков Леонид__
+_Development_
+- __Motychenkov Leonid__
 
-_Тестирование_
-- __Конуркин Михаил__
-- __Мальцев Дмитрий__
-- __Саблин Николай__
-- __Фомин Всеволод__
+_Testing_
+- __Konurkin Mikhail__
+- __Maltsev Dmitry__
+- __Sablin Nikolay__
+- __Fomin Vsevolod__

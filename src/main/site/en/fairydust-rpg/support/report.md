@@ -1,3 +1,3 @@
-# Сообщить об ошибке
+# Report error
 
-[Напишите](mailto:zsgdstudio@gmail.com?subject=Ошибка%20на%20сайте) `zsgdstudio@gmail.com` с темой `Ошибка на сайте`.
+[Send](mailto:zsgdstudio@gmail.com?subject=Site%20error) email to `zsgdstudio@gmail.com` themed `Ошибка на сайте`.

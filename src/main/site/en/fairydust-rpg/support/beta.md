@@ -1,22 +1,22 @@
-# Поучаствовать в бета-тестировании
+# Join beta
 
-Подготовьте приключение и проведите игру.
+Prepare adventure and run the game.
 
-[Напишите](mailto:zsgdstudio@gmail.com?subject=Тестирование%20Fairydust) свой отзыв в свободной форме на `zsgdstudio@gmail.com`,
-темой письма укажите `Тестирование Fairydust`.
+[Send](mailto:zsgdstudio@gmail.com?subject=Fairydust%20beta%20test) your free form report to `zsgdstudio@gmail.com`
+themed `Тестирование Fairydust`.
 
-В отзыв включите следующее:
-- Ваш опыт в НРИ.
-- Количество игроков.
-- Какое приключение вы сыграли.
+Include the following information:
+- Your experience in tabletop games.
+- Number of players you ran game with.
+- Which adventure you ran.
 
-Постарайтесь ответить на один или несколько из следующих вопросов, указав _как_ и _почему_:
-- Были ли правила, вызвавшие затруднения в понимании или споры о трактовках? Если да, то какие?
-- Были ли правила, вызвавшие затруднения в приминении, требовавшие консультации с текстом? Если да, то какие?
-- Сколько времени заняло создание персонажей? Какие этапы заняли наименьшее и наибольшее количество времени?
-- Насколько точно игроки поняли возможности своих персонажей?
-- Если в игре было расследование: не зашел ли сюжет в тупик, были ли моменты, когда игроки не знали, что им делать?
-- Если в игре были переговоры: не зашли ли они в тупик, способствовали ли продвижению сюжета?
-- Если в игре были бои: сколько раундов пролилась схватка?
-- Вывзвало ли что-то ощущение нарушения игрового баланса?
-- Если знакомы с другими системами НРИ: как вам показалось, в чем сильные и слабые стороны Fairydust в сравнении с ними?
+Try to answer one or more of the following questions and specify _how_ and _why_:
+- Was there a rule that was hard to reason about or to interpret? If yes, which one?
+- Was there a rule that was hard to use in game or that required constant consulting with text? If yes, which one?
+- How long player character creation took? Which phases were the fastest and slowest in process?
+- How well players understood abilities of their characters?
+- If you used investigation mechanics: was plot derailed or players had no idea what should they do next?
+- If you used negotiation mechanics: has negotiation reached it's logical end?
+- If you used fighting mechanics: how many rounds and real time fight took?
+- Was there something that felt non-balanced gamewise?
+- If you're familiar with other tabletop RPG, what are advantages and disadvantages in using Fairydust compared to them?
