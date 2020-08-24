@@ -90,7 +90,7 @@ ul {
 
 .sider {
     flex: 1;
-    max-width: 320px;
+    max-width: 25%;
 }
 @media (max-width: 960px) {
     .sider {
