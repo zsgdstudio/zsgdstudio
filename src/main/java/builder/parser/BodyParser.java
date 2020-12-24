@@ -127,7 +127,7 @@ public class BodyParser {
                 img(line);
             } else if (line.contains("[")) {
                 link(line);
-            } else if (line.contains("__")) {
+            } else if (line.contains("**")) {
                 bold(line);
             } else if (line.contains("~~")) {
                 strike(line);
@@ -178,7 +178,7 @@ public class BodyParser {
     }
 
     private void bold(String line) {
-        splitAndSurround(line, "__", "<b>", "</b>");
+        splitAndSurround(line, "**", "<b>", "</b>");
     }
 
     private void strike(String line) {

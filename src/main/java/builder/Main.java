@@ -18,7 +18,6 @@ public class Main {
         } else {
             src = args[0];
             trg = args[1];
-            System.out.println("args from line");
         }
         File srcF = new File(src);
         File trgF = new File(trg);
