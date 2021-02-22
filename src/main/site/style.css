@@ -1,32 +1,36 @@
 /*https://www.colorcombos.com/color-schemes/14/ColorCombo14.html*/
-/*style clearing*/
 
+/*style clearing*/
 body {
     margin: 0px;
     border: 0px;
     padding: 0px;
 
     background-color: #C3C3E5;
-    color: #443266;
 
+    color: #443266;
     font-family: sans-serif;
     line-height: 125%;
 }
-
 ul {
     margin: 0px;
     border: 0px;
+    padding: 0px;
+    padding-left: 2.5em;
 }
-
-
+li .plain_block {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
 
 /*header*/
 
 .header {
     width: 100%;
     clear: both;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     overflow-x: auto;
     overflow-y: visible;
     white-space: nowrap;
@@ -41,9 +45,9 @@ ul {
 }
 .header li {
     padding: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    display: inline;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    display: inline-block;
 
     border: 2px solid #C3C3E5;
     border-radius: 15px;
@@ -54,15 +58,13 @@ ul {
     text-decoration: none;
 }
 
-
-
 /*footer*/
 
 .footer {
     width: 100%;
     clear: both;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 
     background-color: #443266;
 
@@ -73,8 +75,6 @@ ul {
     color: #C3C3E5;
     text-decoration: none;
 }
-
-
 
 /*content*/
 
@@ -88,6 +88,8 @@ ul {
     }
 }
 
+/*sider navigation bar*/
+
 .sider {
     flex: 1;
     max-width: 25%;
@@ -97,95 +99,118 @@ ul {
         max-width: none;
         max-height: 4em;
         overflow: hidden;
-        transition: height;
+        transition-property: height;
     }
     .sider:hover {
-        height: auto;
         max-height: none;
+        height: auto;
     }
 }
 
-.center {
+/*center of page*/
+
+.page {
     flex: 3;
     max-width: 50%;
-    padding: 15px;
+    padding: 1em;
 
     background-color: #F1F0FF;
 }
 @media (max-width: 960px) {
-    .center{
+    .page{
         max-width: 100%;
     }
 }
 
+/*next-prev horizontal navigation bar*/
 
-
-/*elements*/
-
-.horizontal_nav {
+.next_prev {
     display: inline-block;
     width: 99%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
-.horizontal_nav a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.horizontal_nav .prev {
+.next_prev .prev {
     float: left;
     width: 49%;
 }
-.horizontal_nav .next {
+.next_prev .next {
     float: right;
     width: 49%;
     text-align: right;
 }
 
-.block {
-    max-width: 100%;
-    margin: 10px;
+/*breadcrumbs navigation bar*/
+
+.breadcrumbs {
+    display: inline-block;
+    width: 99%;
+    margin: 0.5em;
 }
 
-.example {
+/*blocks*/
+
+.header_block {
     max-width: 100%;
-    margin: 10px;
-    padding: 10px;
+    margin: 0.5em;
+}
+
+.quote_block {
+    max-width: 100%;
+    margin: 0.5em;
+    padding: 0.5em;
 
     color: #8C489F;
     border: 1px solid gray;
     border-radius: 15px;
 }
 
-.code {
-    text-decoration: underline;
-}
-
-.image {
-    text-align: center;
-}
-.image img {
-    width: auto;
-    max-width: 100%
-}
-
-
-
-
-
-ul {
-    list-style-type: circle;
-    list-style-position: outside;
-}
-
 table {
-    /*width: 100%;*/
-    margin: 10px;
+    margin: 1em;
     empty-cells: show;
     border-collapse: collapse;
 }
-
+th {
+    border: 1px solid black;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: center;
+}
 td {
     border: 1px solid black;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     text-align: center;
+}
+
+.plain_block {
+    max-width: 100%;
+    margin: 0.5em;
+}
+
+ul {
+    list-style-type: "\2605";
+    list-style-position: outside;
+}
+li {
+    padding-left: 0.5em;
+}
+
+/*elements*/
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 99%;
+    width: auto;
+}
+
+.code {
+    text-decoration: underline;
 }
