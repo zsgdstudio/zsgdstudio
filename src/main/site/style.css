@@ -161,7 +161,7 @@ li .plain_block {
     padding: 0.5em;
 
     color: #8C489F;
-    border: 1px solid gray;
+    border: 1px solid #443266;
     border-radius: 15px;
 }
 
@@ -171,7 +171,7 @@ table {
     border-collapse: collapse;
 }
 th {
-    border: 1px solid black;
+    border: 1px solid #443266;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
     padding-left: 0.5em;
@@ -179,7 +179,7 @@ th {
     text-align: center;
 }
 td {
-    border: 1px solid black;
+    border: 1px solid #443266;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
     padding-left: 0.5em;
