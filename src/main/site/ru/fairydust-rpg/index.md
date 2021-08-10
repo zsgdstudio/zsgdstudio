@@ -3,14 +3,7 @@
 _Настольная ролевая игра про приключения, интриги, экшен и магию,_
 _где правила позволяют игрокам придумывать заклинания на лету._
 
-[Основная книга правил](a_corebook/index.md) OpenBeta.5
-
-Предыдущие версии:
-- [OpenBeta.4](a_corebook_ob4/index.md)
-- [OpenBeta.3.2](a_corebook_ob3_2/index.md)
-- OpenBeta.2
-- OpenBeta.1
-- OpenBeta.0
+[Основная книга правил](a_corebook/index.md)
 
 ## Поддержать проект
 
