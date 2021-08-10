@@ -2,9 +2,9 @@ package builder.model
 
 import builder.util.Flow
 
-abstract class TextElement {}
+abstract class TextElement
 
-class TextElementContext {
+class TextElementContext(val curPage: Page) {
     private var isBold = false
     private var isItalic = false
     private var isStrike = false
@@ -23,13 +23,13 @@ class TextElementContext {
     }
 
     fun boldStart(context: Context, line: String) {
-        if (isBold) context.addWarning("double bold(** or __) opening tag", line)
+        if (isBold) context.addWarning("${curPage.srcPath}", line, "double bold(** or __) opening tag")
         res.add(BOLD_START)
         isBold = true
     }
 
     fun boldFinish(context: Context, line: String) {
-        if (!isBold) context.addWarning("bold(** or __) closing tag without opening", line)
+        if (!isBold) context.addWarning("${curPage.srcPath}",line, "bold(** or __) closing tag without opening")
         res.add(BOLD_FINISH)
         isBold = false
     }
@@ -40,13 +40,13 @@ class TextElementContext {
     }
 
     fun italicStart(context: Context, line: String) {
-        if (isItalic) context.addWarning("double italic(* or _) opening tag", line)
+        if (isItalic) context.addWarning("${curPage.srcPath}", line, "double italic(* or _) opening tag")
         res.add(ITALIC_START)
         isItalic = true
     }
 
     fun italicFinish(context: Context, line: String) {
-        if (!isItalic) context.addWarning("italic(* or _) closing tag without opening", line)
+        if (!isItalic) context.addWarning("${curPage.srcPath}",line, "italic(* or _) closing tag without opening")
         res.add(ITALIC_FINISH)
         isItalic = false
     }
@@ -85,13 +85,13 @@ class TextElementContext {
             if (isItalic) message += "italic(* or _) "
             if (isStrike) message += "strike(~~) "
             if (isCode) message += "code(`) "
-            context.addWarning(message, line)
+            context.addWarning("${curPage.srcPath}", line, message)
         }
     }
 }
 
 fun textElements(context: Context, curPage: Page, fromLines: Flow<String>) : List<TextElement> {
-    val teContext = TextElementContext()
+    val teContext = TextElementContext(curPage)
     while (fromLines.hasNext()) {
         val line = fromLines.next()
         if (line.endsWith("  ")) teContext.br()
