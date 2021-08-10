@@ -7,7 +7,7 @@ _где правила позволяют игрокам придумывать 
 
 Предыдущие версии:
 - [OpenBeta.4](a_corebook_ob4/index.md)
-- OpenBeta.3
+- [OpenBeta.3.2](a_corebook_ob3_2/index.md)
 - OpenBeta.2
 - OpenBeta.1
 - OpenBeta.0
