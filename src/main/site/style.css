@@ -199,6 +199,9 @@ ul {
 li {
     padding-left: 0.5em;
 }
+li .quote_block {
+    margin-right: 3.5em;
+}
 
 /*elements*/
 
