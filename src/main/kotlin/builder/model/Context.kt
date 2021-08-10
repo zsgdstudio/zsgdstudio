@@ -11,7 +11,7 @@ class Context(srcPath: String, trgPath: String, entryPointPath: String) {
     val warnings: MutableList<Warning> = ArrayList()
 
     private val pagesByPath: MutableMap<Path, Page> = HashMap()
-    private val pageWaiters: MutableMap<Path, MutableList<(Page)->Unit>> = HashMap()
+    private val pageWaiters: MutableMap<Path, MutableList<PageWaiter>> = HashMap()
 
     init {
         val srcFile = File(srcPath)
@@ -33,31 +33,33 @@ class Context(srcPath: String, trgPath: String, entryPointPath: String) {
 
         rootDir = Dir(this, null, srcFile)
 
-        pageWaiters.forEach {
-            if (it.value.isNotEmpty()) this.addWarning("link unresolved", "${it.key}")
-        }
+        pageWaiters
+            .filter { it.value.isNotEmpty() }
+            .forEach { entry ->
+                this.addWarning("${entry.value.map { it.name }.toList()}", "${entry.key}", "link unresolved")
+            }
 
         val entryPage = pagesByPath[entryPointAbsolutePath]
         check(entryPage != null) {"entry point page not parsed"}
         entryPage.reach()
     }
 
-    fun waitForPage(srcPath: Path, onReady: (Page)->Unit) {
+    fun waitForPage(srcPath: Path, fromPage: Page, onReady: (Page)->Unit) {
         val page = pagesByPath[srcPath]
         if (page != null) onReady(page)
         else {
             pageWaiters.putIfAbsent(srcPath, ArrayList())
-            pageWaiters[srcPath]!!.add(onReady)
+            pageWaiters[srcPath]!!.add(PageWaiter("${fromPage.srcPath}", onReady))
         }
     }
 
     fun addPage(page: Page) {
         pagesByPath[page.srcPath] = page
-        pageWaiters[page.srcPath]?.forEach { it(page) }
+        pageWaiters[page.srcPath]?.forEach { it.actions(page) }
         pageWaiters.remove(page.srcPath)
     }
 
-    fun addWarning(message: String, atLine: String) {
-        this.warnings.add(Warning(message, atLine))
+    fun addWarning(fileName: String, line: String, message: String) {
+        this.warnings.add(Warning(fileName, line, message))
     }
 }

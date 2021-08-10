@@ -1,3 +1,3 @@
 package builder.model
 
-class Warning(val message: String, val atLine: String) {}
+class Warning(val fileName:String, val line: String, val message: String)

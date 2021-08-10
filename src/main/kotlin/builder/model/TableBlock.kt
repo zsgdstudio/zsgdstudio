@@ -15,7 +15,7 @@ class TableBlock(context: Context, curPage: Page, fromLines: Flow<String>) : Blo
         }
 
         if (delimiter.cells.size != header.cells.size || rows.any { it.cells.size != header.cells.size })
-            context.addWarning("inconsistent row size", headerString)
+            context.addWarning("${curPage.srcPath}", headerString, "inconsistent row size")
     }
 }
 
