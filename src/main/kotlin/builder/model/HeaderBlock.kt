@@ -16,7 +16,7 @@ class HeaderBlock(context: Context, curPage: Page, fromLines: Flow<String>) : Bl
         }
         this.headerLvl = tempHeaderLevel
         if (headerLvl > 6)
-            context.addWarning("header level is more than 6", headerLine)
+            context.addWarning("${curPage.srcPath}", headerLine, "header level is more than 6")
 
         var srcLine = ""
         while (fromLine.hasNext()) {

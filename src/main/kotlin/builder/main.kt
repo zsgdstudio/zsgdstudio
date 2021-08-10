@@ -11,16 +11,7 @@ fun main(args: Array<String>) {
 }
 
 fun printWarnings(context: Context) {
-    val maxLength = context.warnings.map { it.atLine.length }.maxOrNull() ?: return
     context.warnings.forEach {
-        val res = StringBuilder("[parser warning] ")
-        res.append(it.atLine)
-        var i = it.atLine.length
-        while (i < maxLength) {
-            res.append(" ")
-            i++
-        }
-        res.append(" :: ").append(it.message)
-        println(res.toString())
+        println("[parser warning]\n    ${it.fileName}\n    ${it.line}\n    ${it.message}")
     }
 }

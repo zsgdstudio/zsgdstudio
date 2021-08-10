@@ -7,7 +7,7 @@ class PageLink(context: Context, curPage: Page, text: String, image: Boolean, pa
 
     init {
         curPage.linksTo.add(this)
-        context.waitForPage(pagePath) {
+        context.waitForPage(pagePath, curPage) {
             this.page = it
         }
     }
