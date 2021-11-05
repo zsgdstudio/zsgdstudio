@@ -147,10 +147,12 @@ private fun translateFooter(trgFile: File, lines: MutableList<String>, page: Pag
 private fun translateBlock(trgFile: File, lines: MutableList<String>, block: Block) {
     when (block) {
         is TableBlock -> {
+            lines.add("<div class=\"table\">\n")
             lines.add("<table>\n")
             translateTableRow(trgFile, lines, block.header, true)
             block.rows.forEach { translateTableRow(trgFile, lines, it, false) }
             lines.add("</table>\n")
+            lines.add("</div>\n")
         }
         is QuoteBlock -> {
             lines.add("<div class=\"quote_block\">\n")
