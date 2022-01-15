@@ -228,6 +228,9 @@
 <span class="code">Проверка навыка = !d10 + компетентность, если персонаж владеет навыком + применимые модификаторы.</span>
 </div>
 <div class="plain_block">
+<span class="code">Компетентность = базовая компетентность + уровень / 2</span>.
+</div>
+<div class="plain_block">
 Если проверка навыка больше целевого числа, действие персонажа успешно. Если меньше - провалено.
 </div>
 <div class="plain_block">
@@ -411,6 +414,9 @@
 <div class="header_block">
 <h2>Список навыков</h2>
 </div>
+<div class="header_block">
+<h3>Телесные навыки</h3>
+</div>
 <ul>
 <li>
 <div class="plain_block">
@@ -447,18 +453,23 @@
 </li>
 <li>
 <div class="plain_block">
-<i>Внимание</i>.
+<i>Живучесть</i>.
 </div>
 <div class="quote_block">
 <div class="plain_block">
-Способность заметить что-либо, быстро найти предмет среди множества других, умение разглядеть или услышать издалека, общая наблюдательность.
+Способность выдерживать тяжёлые телесные условия, сопротивление болезням, ядам, ранениям.
 </div>
 
 </div>
 </li>
+</ul>
+<div class="header_block">
+<h3>Ментальные навыки</h3>
+</div>
+<ul>
 <li>
 <div class="plain_block">
-<i>Анализ</i>.
+<i>Аналитика</i>.
 </div>
 <div class="quote_block">
 <div class="plain_block">
@@ -480,11 +491,11 @@
 </li>
 <li>
 <div class="plain_block">
-<i>Живучесть</i>.
+<i>Внимание</i>.
 </div>
 <div class="quote_block">
 <div class="plain_block">
-Способность выдерживать тяжёлые телесные условия, сопротивление болезням, ядам, ранениям.
+Способность заметить что-либо, быстро найти предмет среди множества других, умение разглядеть или услышать издалека, общая наблюдательность.
 </div>
 
 </div>
@@ -500,13 +511,29 @@
 
 </div>
 </li>
+</ul>
+<div class="header_block">
+<h3>Социальные навыки</h3>
+</div>
+<ul>
 <li>
 <div class="plain_block">
-<i>Разговор</i>.
+<i>Речь</i>.
 </div>
 <div class="quote_block">
 <div class="plain_block">
 Донесение своей точки зрения, организация, мотивация, нейтрализация конфликтов.
+</div>
+
+</div>
+</li>
+<li>
+<div class="plain_block">
+<i>Блеф</i>.
+</div>
+<div class="quote_block">
+<div class="plain_block">
+Введение в заблуждение, сокрытие намерений, притворство.
 </div>
 
 </div>
@@ -522,6 +549,22 @@
 
 </div>
 </li>
+<li>
+<div class="plain_block">
+<i>Авторитет</i>.
+</div>
+<div class="quote_block">
+<div class="plain_block">
+Способность придавать себе социальный вес и выходить из неловких ситуаций.
+</div>
+
+</div>
+</li>
+</ul>
+<div class="header_block">
+<h3>Знания</h3>
+</div>
+<ul>
 <li>
 <div class="plain_block">
 <i>Естественная наука.</i>
@@ -550,11 +593,76 @@
 </div>
 <div class="quote_block">
 <div class="plain_block">
-Знание текущих новостей, культурных кодов, жаргона, обычаев и т.д.
+Текущие новости, культурные коды, жаргон, обычаи и т.д.
 </div>
 
 </div>
 </li>
+<li>
+<div class="plain_block">
+<i>Медицина</i>.
+</div>
+<div class="quote_block">
+<div class="plain_block">
+Первая помощь, диагностика.
+</div>
+
+</div>
+</li>
+</ul>
+<div class="header_block">
+<h3>Ремесла</h3>
+</div>
+<ul>
+<li>
+<div class="plain_block">
+<i>Техника / технология</i>.
+</div>
+<div class="quote_block">
+<div class="plain_block">
+Работа и оперирование техническими устройствами и приспособлениями.
+</div>
+
+</div>
+</li>
+<li>
+<div class="plain_block">
+<i>Езда</i>.
+</div>
+<div class="quote_block">
+<div class="plain_block">
+Управление ездовым животным или транспортом.
+</div>
+
+</div>
+</li>
+<li>
+<div class="plain_block">
+<i>Скаутинг</i>.
+</div>
+<div class="quote_block">
+<div class="plain_block">
+Ориентирование на местности, умения выживать вне цивилизации.
+</div>
+
+</div>
+</li>
+<li>
+<div class="plain_block">
+<i>Плутовство</i>.
+</div>
+<div class="quote_block">
+<div class="plain_block">
+Умение оставаться незаметным, не производить шума, маскировка под окружающую обстановку, карманные кражи, подмены предметов, фокусы, умение выпутываться из оков.
+</div>
+
+</div>
+</li>
+</ul>
+<div class="header_block">
+<h3>Боевые навыки</h3>
+</div>
+<ul>
 <li>
 <div class="plain_block">
 <i>Драка</i>.
@@ -573,61 +681,6 @@
 <div class="quote_block">
 <div class="plain_block">
 Вооруженный дальний бой.
-</div>
-
-</div>
-</li>
-<li>
-<div class="plain_block">
-<i>Плутовство</i>.
-</div>
-<div class="quote_block">
-<div class="plain_block">
-Умение оставаться незаметным, не производить шума, маскировка под окружающую обстановку, карманные кражи, подмены предметов, фокусы, умение выпутываться из оков.
-</div>
-
-</div>
-</li>
-<li>
-<div class="plain_block">
-<i>Скаутинг</i>.
-</div>
-<div class="quote_block">
-<div class="plain_block">
-Ориентирование на местности, умения выживать вне цивилизации.
-</div>
-
-</div>
-</li>
-<li>
-<div class="plain_block">
-<i>Ремесло / техника</i>.
-</div>
-<div class="quote_block">
-<div class="plain_block">
-Работа и оперирование техническими устройствами и приспособлениями.
-</div>
-
-</div>
-</li>
-<li>
-<div class="plain_block">
-<i>Медицина</i>.
-</div>
-<div class="quote_block">
-<div class="plain_block">
-Первая помощь, диагностика.
-</div>
-
-</div>
-</li>
-<li>
-<div class="plain_block">
-<i>Езда</i>.
-</div>
-<div class="quote_block">
-<div class="plain_block">
-Управление ездовым животным или транспортом.
 </div>
 
 </div>
